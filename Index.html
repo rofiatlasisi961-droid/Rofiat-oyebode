@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lasisi Rofiat Oyebode — Content Strategist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #FFFFFF;
+    --ink: #5C1A28;
+    --wine-deep: #3D0F1A;
+    --muted: #93707A;
+    --accent: #F5C400;
+    --line: #EDE1E3;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .hero {
+    padding: 96px 0 64px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: flex-start;
+    gap: 44px;
+  }
+
+  .hero-text { flex: 1; min-width: 0; }
+
+  .hero-photo {
+    flex-shrink: 0;
+    width: 210px;
+  }
+
+  .hero-photo img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 5 / 7;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 18px 34px -16px rgba(61, 15, 26, 0.4);
+  }
+
+  .hero .eyebrow { margin-bottom: 20px; }
+
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(40px, 8vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+  }
+
+  .hero p.subhead {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 46ch;
+    margin-bottom: 40px;
+  }
+
+  .mark {
+    position: relative;
+    white-space: nowrap;
+    font-style: italic;
+    font-family: 'Fraunces', serif;
+    color: var(--ink);
+  }
+
+  .mark::after {
+    content: "";
+    position: absolute;
+    left: -2px;
+    right: -2px;
+    bottom: 2px;
+    height: 0.55em;
+    background: var(--accent);
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: draw 0.7s cubic-bezier(0.65, 0, 0.35, 1) 0.5s forwards;
+  }
+
+  @keyframes draw {
+    to { transform: scaleX(1); }
+  }
+
+  .signup-btn {
+    display: inline-block;
+    padding: 14px 26px;
+    background: var(--wine-deep);
+    color: var(--paper);
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+
+  .signup-btn:hover { background: var(--ink); }
+  .signup-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .signup-note {
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  section {
+    padding: 56px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  section h2 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+
+  .about p {
+    font-size: 17px;
+    max-width: 56ch;
+  }
+
+  .about p + p { margin-top: 16px; }
+
+  .services {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .service-row {
+    display: flex;
+    gap: 20px;
+    align-items: baseline;
+  }
+
+  .service-row .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--paper);
+    background: var(--wine-deep);
+    padding: 2px 6px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+
+  .service-row .title {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 19px;
+  }
+
+  .service-row .desc {
+    color: var(--muted);
+    font-size: 15px;
+    margin-top: 2px;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .link-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 22px;
+    background: var(--paper);
+    text-decoration: none;
+    color: var(--ink);
+    transition: background 0.15s ease, padding-left 0.15s ease;
+  }
+
+  .link-card:hover {
+    background: #FFFDF2;
+    padding-left: 28px;
+  }
+
+  .link-card .label {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    font-weight: 500;
+  }
+
+  .link-card .sub {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  .link-card .arrow {
+    font-size: 18px;
+    color: var(--muted);
+    transition: transform 0.15s ease;
+  }
+
+  .link-card:hover .arrow {
+    transform: translateX(3px);
+    color: var(--ink);
+  }
+
+  footer {
+    padding: 40px 0 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  footer .fmono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mark::after { animation: none; transform: scaleX(1); }
+    html { scroll-behavior: auto; }
+  }
+
+  @media (max-width: 620px) {
+    .hero {
+      flex-direction: column-reverse;
+      padding: 64px 0 48px;
+      gap: 28px;
+    }
+    .hero-photo {
+      width: 148px;
+    }
+    section { padding: 40px 0; }
+    .link-card { padding: 16px 18px; }
+    .link-card:hover { padding-left: 20px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="wrap">
+
+    <header class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Marketer, Content Strategist &amp; Community Builder</p>
+        <h1>Lasisi Rofiat Oyebode</h1>
+        <p class="subhead">
+          I build content systems for brands and write <span class="mark">The Content Club</span> —
+          a newsletter for creatives who are tired of generic advice.
+        </p>
+
+        <a class="signup-btn" href="https://open.substack.com/pub/lasisirofiatoyebode/chat?r=6qeerp&utm_medium=ios&utm_source=share" target="_blank" rel="noopener">
+          Join The Content Club →
+        </a>
+        <p class="signup-note">No spam, just relatable conversations every Sunday.</p>
+      </div>
+      <div class="hero-photo">
+        <img src="photo.jpg" alt="Portrait of Lasisi Rofiat Oyebode">
+      </div>
+    </header>
+
+    <section class="about">
+      <h2>About</h2>
+      <p>
+        I'm a freelance marketer and content strategist based in Nigeria, currently in the
+        middle of a self-directed transition into product and growth marketing.
+      </p>
+      <p>
+        I've spent the last few years running content and strategy for brands across
+        fintech, agriculture, and fashion — and writing about it, honestly and often
+        with too many jokes, for a growing community of creatives.
+      </p>
+    </section>
+
+    <section class="what-i-do">
+      <h2>What I do</h2>
+      <div class="services">
+        <div class="service-row">
+          <span class="num">01</span>
+          <div>
+            <div class="title">Content strategy</div>
+            <div class="desc">Calendars, frameworks, and voice guides built around what a brand actually sounds like.</div>
+          </div>
+        </div>
+        <div class="service-row">
+          <span class="num">02</span>
+          <div>
+            <div class="title">Social &amp; growth marketing</div>
+            <div class="desc">Platform strategy and execution, from organic content to paid acquisition.</div>
+          </div>
+        </div>
+        <div class="service-row">
+          <span class="num">03</span>
+          <div>
+            <div class="title">Community &amp; newsletters</div>
+            <div class="desc">Building spaces people actually want to stay in — like The Content Club.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="link-list">
+      <h2>Find me</h2>
+      <div class="links">
+        <a class="link-card" href="https://open.substack.com/pub/lasisirofiatoyebode/chat?r=6qeerp&utm_medium=ios&utm_source=share" target="_blank" rel="noopener">
+          <div>
+            <div class="label">The Content Club</div>
+            <div class="sub">Weekly newsletter for creatives</div>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+        <a class="link-card" href="https://canva.link/lasisirofiatoyebode" target="_blank" rel="noopener">
+          <div>
+            <div class="label">Portfolio</div>
+            <div class="sub">Case studies &amp; client work</div>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+        <a class="link-card" href="https://x.com/lasisioyebode?s=11" target="_blank" rel="noopener">
+          <div>
+            <div class="label">Twitter / X</div>
+            <div class="sub">@lasisioyebode</div>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+        <a class="link-card" href="https://www.instagram.com/yourcoach_lola" target="_blank" rel="noopener">
+          <div>
+            <div class="label">Instagram</div>
+            <div class="sub">@yourcoach_lola</div>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+        <a class="link-card" href="https://www.facebook.com/share/1BUe5QvxYA/?mibextid=wwXIfr" target="_blank" rel="noopener">
+          <div>
+            <div class="label">Facebook</div>
+            <div class="sub">Updates &amp; community</div>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+        <a class="link-card" href="https://www.linkedin.com/in/lasisirofiatoyebode1" target="_blank" rel="noopener">
+          <div>
+            <div class="label">LinkedIn</div>
+            <div class="sub">Professional updates</div>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+        <a class="link-card" href="https://wa.me/message/XMK4DQDLLXYIM1" target="_blank" rel="noopener">
+          <div>
+            <div class="label">Work with me</div>
+            <div class="sub">Message me on WhatsApp</div>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <span class="fmono">© 2026 Lasisi Rofiat Oyebode</span>
+      <span class="fmono">Lagos, Nigeria</span>
+    </footer>
+
+  </div>
+
+</body>
+</html>
